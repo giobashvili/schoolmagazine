@@ -7,13 +7,17 @@ import {HttpClientModule} from '@angular/common/http';
 import { FooterComponent } from './footer/footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { AuthComponent } from './page/auth/auth.component';
+import { StudentportfolioComponent } from './pages/studentportfolio/studentportfolio.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FooterComponent,
     HeaderComponent,
-    AuthComponent
+    AuthComponent,
+    StudentportfolioComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
