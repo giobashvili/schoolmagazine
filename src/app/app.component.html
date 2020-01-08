@@ -1,10 +1,17 @@
 <!--<p *ngFor="let item of result">{{item.key}} {{item.value}}</p>-->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div *ngFor="let data of popularDoctorsResponse" >
+        <p>{{data.id}}</p>
+        <p>{{data.doctorId}}</p>
+        <p>{{data.user}}</p>
+        <p>{{data.sortingNumber}}</p>
+        <p>{{data.isActive}}</p>
 
-<div *ngFor="let data of popularDoctorsResponse" >
-  <p>{{data.id}}</p>
-  <p>{{data.doctorId}}</p>
-  <p>{{data.user}}</p>
-  <p>{{data.sortingNumber}}</p>
-  <p>{{data.isActive}}</p>
-
+      </div>
+    </div>
+  </div>
 </div>
+
+
