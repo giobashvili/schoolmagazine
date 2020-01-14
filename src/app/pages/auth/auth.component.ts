@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-auth',
@@ -6,10 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
+  public userName = '';
+  public password = '';
+  public errorMessage: string;
+
+
 
   constructor() { }
 
-  ngOnInit() {
+  onSubmit(result: string): string {
+    if (this.password && this.userName !== '') {
+
+    }
+
+    {
+      return this.errorMessage = 'მომხმარებელი ან პაროლი არასწორია';
+
+
+    }
+  }
+
+    ngOnInit() {
   }
 
 }

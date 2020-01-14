@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentListService } from '../../service/student-list.service';
 
 @Component({
   selector: 'app-studentportfolio',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentportfolioComponent implements OnInit {
 
-  constructor() { }
+
+
+  public studentList: any = [];
+  constructor(
+    public studentl: StudentListService
+  ) {
+    this.sList();
+  }
 
   ngOnInit() {
+  }
+  public sList() {
+    this.studentl.getsudentList().subscribe(
+      result => {
+      this.studentList = result;
+    });
   }
 
 }

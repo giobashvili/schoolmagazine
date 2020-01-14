@@ -1,1 +1,176 @@
-<p>studentportfolio works!</p>
+<app-header></app-header>
+<!--<table class="table table-hover table-bordered">
+  <thead class="justify-content-center">
+  <tr>
+    <th *ngFor="let table1 of tableTitle1">{{ table1 }}</th>
+    <th *ngFor="let table2 of tableTitle2" colspan="3">{{ table2 }}</th>
+  </tr>
+  </thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th *ngFor="let table3 of tableTitle3" class="text-nowrap">{{ table3 }}</th>
+    <th *ngFor="let table3 of tableTitle3">{{ table3 }}</th>
+    <th *ngFor="let table3 of tableTitle3">{{ table3 }}</th>
+    <th *ngFor="let table3 of tableTitle3">{{ table3 }}</th>
+    <th *ngFor="let table3 of tableTitle3">{{ table3 }}</th>
+  </tr>
+
+<tbody>
+  <tr>
+    <td scope="row">1</td>
+    <td>გიგა იობაშვილი</td>
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td scope="row">2</td>
+    <td>გიგა იობაშვილი</td>
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td scope="row">3</td>
+    <td>გიგა იობაშვილი</td>
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+
+
+    <td>10</td>
+    <td>8</td>
+    <td>-</td>
+  </tr>
+</tbody>
+</table>
+<hr> -->
+
+
+
+
+<mat-accordion class="example-headers-align">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        კალენდარი
+      </mat-panel-title>
+      <mat-panel-description>
+        თვე/რიცხვი/წელი
+        <mat-icon>date_range</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker startView="month"></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-action-row>
+      <button mat-button color="warn" (click)="prevStep()">Previous</button>
+      <button mat-button color="primary" (click)="nextStep()">End</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+
+<!--studentList-->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title *ngFor="let student of studentList">
+        {{ student.user }}
+      </mat-panel-title>
+      <mat-panel-description>
+        12 კლასი
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-form-field>
+      <input matInput placeholder="საშინაო დავალება">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" min="1" placeholder="საკლასო სავალება">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput type="number" min="1" placeholder="შემაჯამებელი">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput  placeholder="დასწრება">
+    </mat-form-field>
+  </mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
