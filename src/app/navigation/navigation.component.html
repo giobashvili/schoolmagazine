@@ -1,0 +1,5 @@
+<nav class="py-4 bg-white">
+  <ul class="list-unstyled">
+    <li *ngFor="let item of menuList"><a matRipple routerLink="/{{item.link}}" routerLinkActive="font-weight-bold bg-light" class="d-flex px-3 py-2 text-capitalize text-dark">{{item.text}}</a></li>
+  </ul>
+</nav>

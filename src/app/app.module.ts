@@ -27,7 +27,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material';
-
+import {AuthService} from './service/auth.service';
+import {AppRoutingModule} from './app-routing.module';
+import {NavigationComponent} from './navigation/navigation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,9 +38,11 @@ import { MatNativeDateModule } from '@angular/material';
     AuthComponent,
     StudentportfolioComponent,
     DashboardComponent,
+    NavigationComponent
 
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     AlertModule.forRoot(),
@@ -61,6 +65,8 @@ import { MatNativeDateModule } from '@angular/material';
   providers: [
     ServiceAPIService,
     StudentListService,
+    AuthService,
+    AuthComponent
 
   ],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ServiceAPIService} from './service/service-api.service';
+import {AuthService} from './service/auth.service';
 
 
 @Component({
@@ -12,7 +13,8 @@ export class AppComponent {
   public popularDoctorsResponse: any = [];
 
   constructor(
-public api: ServiceAPIService
+public api: ServiceAPIService,
+public auth: AuthService
   ) {
     this.language();
     this.popularDoctors();

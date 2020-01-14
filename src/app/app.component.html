@@ -1,33 +1,9 @@
-<!--<p *ngFor="let item of result">{{item.key}} {{item.value}}</p>-->
-<app-studentportfolio></app-studentportfolio>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<app-header *ngIf="auth.isMain"></app-header>
+<div class="row no-gutters" [class.justify-content-center]="!auth.isMain">
+  <div *ngIf="auth.isMain" class="col-sm-4 col-lg-2  border-right">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="col-sm-8 col-lg-10">
+    <router-outlet></router-outlet>
+  </div>
+</div>
