@@ -1,82 +1,42 @@
 <app-header></app-header>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker startView="month"></mat-datepicker>
-      </mat-form-field>
-    </div>
-  </div>
+<!--Date-->
+<div class="mat">
+<mat-form-field class="example-full-width">
+  <input matInput [matDatepicker]="dp3" placeholder="თვე/რიცხვი/წელი" disabled>
+  <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+  <mat-datepicker touchUi #dp3 disabled="false"></mat-datepicker>
+</mat-form-field>
 </div>
-
-<mat-accordion class="example-headers-align">
-
-  <mat-expansion-panel hideToggle>
-
-<!--    <mat-expansion-panel-header>-->
-<!--      <mat-panel-title>-->
-<!--        კალენდარი-->
-<!--      </mat-panel-title>-->
-<!--      <mat-panel-description>-->
-<!--        თვე/რიცხვი/წელი-->
-<!--        <mat-icon>date_range</mat-icon>-->
-<!--      </mat-panel-description>-->
-<!--    </mat-expansion-panel-header>-->
-
-
-
-
-
-    <mat-action-row>
-      <button mat-button color="warn" (click)="prevStep()">Previous</button>
-      <button mat-button color="primary" (click)="nextStep()">End</button>
-    </mat-action-row>
-  </mat-expansion-panel>
-
 <!--studentList-->
-  <mat-expansion-panel>
+ <mat-accordion>
+  <mat-expansion-panel *ngFor="let student of studentList ">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        giga iobashvili
+        {{ student.user }}
       </mat-panel-title>
+
       <mat-panel-description>
-        12 კლასი
         <mat-icon>account_circle</mat-icon>
+         {{ student.id }} კლასი
       </mat-panel-description>
+
     </mat-expansion-panel-header>
-
     <mat-form-field>
-      <input matInput placeholder="საშინაო დავალება">
+      <input matInput type="number" [(ngModel)]="maxvalueClass" min="1" max="10" placeholder="საკლასო">{{ maxValueClass() }}
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="number" min="1" max="10" placeholder="საშინაო"  [(ngModel)]="maxvalueHome">{{ maxValueHome() }}
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" min="1" placeholder="საკლასო სავალება">
+      <input matInput type="number" min="1" max="10" placeholder="შემაჯამებელი"  [(ngModel)]="maxvalueSummary">{{ maxValueSummary() }}
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput type="number" min="1" placeholder="შემაჯამებელი">
+      <input matInput value="კი" placeholder="დასწრება">
     </mat-form-field>
 
-    <mat-form-field>
-      <input matInput  placeholder="დასწრება">
-    </mat-form-field>
   </mat-expansion-panel>
 </mat-accordion>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<button mat-raised-button color="warn">შენახვა</button>
 

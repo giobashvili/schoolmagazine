@@ -6,7 +6,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 import { AppComponent } from './app.component';
@@ -30,6 +30,10 @@ import { MatNativeDateModule } from '@angular/material';
 import {AuthService} from './service/auth.service';
 import {AppRoutingModule} from './app-routing.module';
 import {NavigationComponent} from './navigation/navigation.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatSortModule} from '@angular/material/sort';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,14 +63,16 @@ import {NavigationComponent} from './navigation/navigation.component';
     MatTableModule,
     MatExpansionModule,
     MatDatepickerModule,
-    MatNativeDateModule
-
+    MatNativeDateModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSortModule
   ],
   providers: [
     ServiceAPIService,
     StudentListService,
     AuthService,
-    AuthComponent
+    AuthComponent,
 
   ],
   bootstrap: [AppComponent]

@@ -9,8 +9,8 @@ export class AuthService {
   constructor(
     private http: HttpClient,
     private RT: Router
-  ) { }
-  public isMain: boolean = false;
+  ) { this.checkLogin(); }
+  public isMain = false;
 
   public login(USERNAME: string, PASSWORD: string) {
     const data = {
@@ -26,4 +26,14 @@ export class AuthService {
     localStorage.setItem('user', USERNAME);
     this.RT.navigate(['/dashboard']);
   }
+  public checkLogin(): void {
+    const loggedIn = localStorage.getItem('accessToken');
+    if (loggedIn) {
+      this.RT.navigate(['/dashboard']);
+      this.isMain = false;
+    } else {
+      this.RT.navigate(['/']);
+    }
 }
+}
+

@@ -3,7 +3,11 @@
 <div class="container py-5">
   <div class="row justify-content-center">
 
-    <div id="" class="col-6 col-sm-6 col-md-3 col-lg-2"><button mat-fab color="primary">1 კლასი</button></div>
+    <div
+      *ngFor="let dsh of klass"
+      id="{{ dsh.key }}"
+      class="col-6 col-sm-6 col-md-3 col-lg-2">
+      <button mat-fab color="primary">{{dsh.value}}</button></div>
 
   </div>
 </div>

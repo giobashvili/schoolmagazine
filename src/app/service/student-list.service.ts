@@ -10,7 +10,7 @@ export class StudentListService {
     private http: HttpClient
   ) { }
 
-  public getsudentList(): Observable<any>{
-    return this.http.get('https://redmed.ge/web/api/users/get_popular_doctor')
+  public getsudentList(): Observable<any> {
+    return this.http.get('https://redmed.ge/web/api/users/get_popular_doctor');
   }
 }

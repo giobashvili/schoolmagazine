@@ -8,8 +8,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  public userName = '';
-  public password = '';
+  public userName = '597190213';
+  public password = 'Aa123456';
   public errorMessage: string;
 
   constructor(

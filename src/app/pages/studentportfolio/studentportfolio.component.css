@@ -1,4 +1,17 @@
 mat-form-field {
-  /*text-align: center;*/
+  text-align: center;
   justify-content: center;
+}
+.mat{
+  margin-left: 40%;
+}
+
+mat-panel-description{
+  margin-left: 10%;
+
+}
+
+button{
+  margin-top: 10px;
+  margin-left: 45%;
 }
