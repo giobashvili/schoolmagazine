@@ -12,18 +12,18 @@ export class AuthService {
   ) { this.checkLogin(); }
   public isMain = false;
 
-  public login(USERNAME: string, PASSWORD: string) {
+  public login(email: string, password: string) {
     const data = {
-      UserName: USERNAME,
-      Password: PASSWORD
+      UserName: email,
+      Password: password
     };
-    return this.http.post('https://beta.redmed.ge/web/api/user_service/AdminLogin', data);
+    return this.http.post('http://5.175.2.145:2233/api/User/LogIn', data);
   }
 
-  public setLogged(TOKEN: string, USERNAME: string): void {
+  public setLogged(TOKEN: string, email: string): void {
     this.isMain = false;
     localStorage.setItem('accessToken', TOKEN);
-    localStorage.setItem('user', USERNAME);
+    localStorage.setItem('user', email);
     this.RT.navigate(['/dashboard']);
   }
   public checkLogin(): void {

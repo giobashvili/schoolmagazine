@@ -8,8 +8,8 @@ import {Router} from '@angular/router';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  public userName = '597190213';
-  public password = 'Aa123456';
+  public userName = 'iobashviliirakli30@gmail.com';
+  public password = 'Benelux123';
   public errorMessage: string;
 
   constructor(
@@ -22,7 +22,7 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.auth.login(('995' + this.userName), this.password).subscribe(
+    this.auth.login(( this.userName), this.password).subscribe(
       result => {
         if (result) {
           if (result.hasOwnProperty('accessToken')) {
