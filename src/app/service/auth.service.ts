@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 
@@ -12,12 +12,21 @@ export class AuthService {
   ) { this.checkLogin(); }
   public isMain = false;
 
+  public headers: any = {};
+
+  public setHeaders() {
+    this.headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+  }
+
   public login(email: string, password: string) {
     const data = {
-      UserName: email,
-      Password: password
+      email: email,
+      password: password
     };
-    return this.http.post('http://5.175.2.145:2233/api/User/LogIn', data);
+    this.setHeaders();
+    const headers = this.headers;
+    return this.http.post('http://localhost:53047/api/user/LogIn', data,{ headers });
   }
 
   public setLogged(TOKEN: string, email: string): void {
