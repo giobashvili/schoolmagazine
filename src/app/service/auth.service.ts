@@ -12,21 +12,12 @@ export class AuthService {
   ) { this.checkLogin(); }
   public isMain = false;
 
-  public headers: any = {};
-
-  public setHeaders() {
-    this.headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-  }
-
   public login(email: string, password: string) {
     const data = {
       email: email,
       password: password
     };
-    this.setHeaders();
-    const headers = this.headers;
-    return this.http.post('http://localhost:53047/api/user/LogIn', data,{ headers });
+    return this.http.post('http://5.175.2.145:2233/api/User/LogIn', data);
   }
 
   public setLogged(TOKEN: string, email: string): void {
