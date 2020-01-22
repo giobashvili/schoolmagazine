@@ -5,13 +5,17 @@
     width="50px"></a>
 
 
-    <ul class="nav navbar-nav ml-auto">
-      <a href="" class="dropdown-toggle user"[matMenuTriggerFor]="menu">გიგა<span class="caret"></span></a>
+    <div>
+      <button class="btn" mat-button [matMenuTriggerFor]="menu">
+        <span>{{user}}</span>
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>კლასის არჩევა</button>
-        <button mat-menu-item>გამოსვლა</button>
+        <button mat-menu-item>პარამეტრები</button>
+        <button mat-menu-item (click)="auth.logOut()">გასვლა</button>
       </mat-menu>
-    </ul>
+    </div>
+    
   </div>
 </nav>
 
