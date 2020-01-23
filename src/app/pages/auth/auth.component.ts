@@ -25,7 +25,9 @@ export class AuthComponent implements OnInit {
       result => {
         if (result) {
           if (result.hasOwnProperty('accsesToken')) {
-            this.auth.setLogged('accsesToken', 'userName');
+            const accsesToken = result['accsesToken'];
+            const userName = result['userName']
+            this.auth.setLogged(accsesToken, userName);
             this.auth.isMain = true;
           }
         }

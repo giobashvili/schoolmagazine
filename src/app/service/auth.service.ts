@@ -28,7 +28,7 @@ export class AuthService {
     this.logged = true;
     localStorage.setItem('accsesToken', TOKEN);
     localStorage.setItem('user', USERNAME);
-    this.RT.navigate(['/studentportfolio']);
+    this.RT.navigate(['/dashboard']);
   }
   public logOut(): void {
     this.logged = false;
@@ -39,7 +39,7 @@ export class AuthService {
   public checkLogin(): void {
     const loggedIn = localStorage.getItem('accsesToken');
     if (loggedIn) {
-      this.RT.navigate(['/studentportfolio']);
+      this.RT.navigate(['/dashboard']);
       this.isMain = true;
     }
     else {
