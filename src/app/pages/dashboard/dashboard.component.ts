@@ -8,20 +8,21 @@ import { StudentListService } from '../../service/student-list.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
- public Class: any = [];
+ public userClasses: any = [];
+ public userPupils : any = [];
   constructor(
    public dash: DashboardService,
    public stud : StudentListService
   ) {
-     this.dashboard1();
+     this.classesList();
   }
 
   ngOnInit() {
   }
-  public dashboard1() {
+  public classesList() {
     this.dash.getUserClasses().subscribe(
       result => {
-        this.Class = result;
+        this.userClasses = result;
       }
     );
   }
@@ -29,7 +30,7 @@ export class DashboardComponent implements OnInit {
   public onClick(Id: Number){
     this.stud.getPupilByClassId(Id).subscribe(
       result => {
-        this.Class = result;
+        this.userPupils = result;
       }
     );
   }
