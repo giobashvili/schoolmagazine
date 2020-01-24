@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient} from "@angular/common/http";
 import {Router} from '@angular/router';
-
 
 @Injectable()
 export class AuthService {
@@ -27,7 +26,7 @@ export class AuthService {
     this.RT.navigate(['/dashboard']);
   }
   public checkLogin(): void {
-    const loggedIn = localStorage.getItem('accessToken');
+    const loggedIn = localStorage.getItem('accsesToken');
     if (loggedIn) {
       this.RT.navigate(['/dashboard']);
       this.isMain = false;
