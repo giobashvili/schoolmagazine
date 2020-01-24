@@ -16,19 +16,14 @@ export class StudentportfolioComponent implements OnInit {
 
   public studentList: any = [];
   constructor(
-    public studentl: StudentListService
+    public stud: StudentListService
   ) {
-    this.sList();
   }
 
   ngOnInit() {
   }
-  public sList() {
-    this.studentl.getsudentList().subscribe(
-      result => {
-      this.studentList = result;
-    });
-  }
+
+
 
   public maxValueClass() {
     if (this.maxvalueClass > 10) {

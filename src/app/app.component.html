@@ -1,9 +1,9 @@
 <app-header *ngIf="auth.isMain"></app-header>
 <div class="row no-gutters" [class.justify-content-center]="!auth.isMain">
-<div *ngIf="auth.isMain" class="col-sm-4 col-lg-2  border-right">
-  <app-navigation></app-navigation>
+  <div *ngIf="auth.isMain">
+
 </div>
-<div class="col-sm-8 col-lg-10">
+<div class="col-12 col-sm-12 col-md-12 col-lg-12">
   <router-outlet></router-outlet>
 </div>
 </div>
