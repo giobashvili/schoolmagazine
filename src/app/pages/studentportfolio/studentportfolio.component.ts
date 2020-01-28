@@ -21,6 +21,16 @@ export class StudentportfolioComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.stud.getStudentList
+      .subscribe(
+        (list: any[]) => {
+          debugger
+          if (list) {
+            this.studentList = list;
+          }
+        }
+      );
+
   }
 
 

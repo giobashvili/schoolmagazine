@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
-<<<<<<< HEAD
+
 import {HttpClient} from "@angular/common/http";
 import {Router} from '@angular/router';
-=======
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
->>>>>>> 0add63038aa17eea09bbfbc3356f895fbf4c824d
+
 
 @Injectable()
 export class AuthService {

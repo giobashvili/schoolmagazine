@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../service/dashboard.service';
 import { StudentListService } from '../../service/student-list.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -12,7 +13,8 @@ export class DashboardComponent implements OnInit {
  public userPupils : any = [];
   constructor(
    public dash: DashboardService,
-   public stud : StudentListService
+   public stud : StudentListService,
+   private RT: Router
   ) {
      this.classesList();
   }
@@ -30,7 +32,12 @@ export class DashboardComponent implements OnInit {
   public onClick(Id: Number){
     this.stud.getPupilByClassId(Id).subscribe(
       result => {
-        this.userPupils = result;
+        if (result) {
+          this.RT.navigate(['/studentportfolio'])
+            .then(() => {
+              this.stud.setStudentList(result);
+            });
+        }
       }
     );
   }

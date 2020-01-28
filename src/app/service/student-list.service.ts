@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {BehaviorSubject, Observable, of, pipe} from 'rxjs';
 import { Router } from '@angular/router';
+import {map} from "rxjs/operators";
+import {debug} from "util";
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentListService {
+
+  private studentList = new BehaviorSubject(null);
+  getStudentList = this.studentList.asObservable();
   constructor(
     private http: HttpClient,
     private RT: Router
@@ -24,7 +29,15 @@ export class StudentListService {
   public getPupilByClassId(Id: Number): Observable<any>{
     this.setHeaders();
     const headers = this.headers;
-    return this.http.get('http://5.175.2.145:2233/api/user/GetPupilByClassId' + '?classId=' + Id , {headers});
-    this.RT.navigate(['/studentportfolio']);
+    return this.http.get('http://5.175.2.145:2233/api/user/GetPupilByClassId' + '?classId=' + Id , {headers})
+      pipe(
+        map((response: any) => {
+          return response;
+        })
+      );
+  }
+
+  setStudentList(list) {
+    this.studentList.next(list)
   }
 }

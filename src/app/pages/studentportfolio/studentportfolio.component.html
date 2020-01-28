@@ -7,16 +7,16 @@
 </mat-form-field>
 </div>
 <!--studentList-->
- <mat-accordion>
+ <mat-accordion *ngIf="studentList.length">
   <mat-expansion-panel *ngFor="let student of studentList ">
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{ student.user }}
+        {{ student.firstName }}
       </mat-panel-title>
 
       <mat-panel-description>
         <mat-icon>account_circle</mat-icon>
-         {{ student.id }} კლასი
+         {{ student.pupilId }} კლასი
       </mat-panel-description>
 
     </mat-expansion-panel-header>
