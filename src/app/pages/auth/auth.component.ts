@@ -21,7 +21,7 @@ export class AuthComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.auth.login(this.userName, this.password).subscribe(
+    this.auth.login(('+995'+ this.userName), this.password).subscribe(
       result => {
         if (result) {
           if (result.hasOwnProperty('accsesToken')) {

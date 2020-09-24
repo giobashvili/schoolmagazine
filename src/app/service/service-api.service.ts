@@ -10,8 +10,10 @@ export class ServiceAPIService {
   ) {
 
   }
-  public getLanguage(): Observable <any> {
-    return this.http.get('https://redmed.ge/web/api/user_service/GetLanguage');
+  public getLanguage() {
+    this.http.get('https://redmed.ge/web/api/user_service/GetLanguage').subscribe(res=>{
+  
+    });
 }
 
   public getPopularDoctors(): Observable<any> {

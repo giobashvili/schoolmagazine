@@ -22,4 +22,5 @@ export class HeaderComponent implements OnInit {
     this.user = localStorage.getItem('user');
   }
 
+  
 }
